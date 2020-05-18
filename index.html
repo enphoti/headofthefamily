@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 
 <head>
-  <title>Game Player</title>
+  <title>Head of the Family</title>
 </head>
 
 <style>
 
   div {
-   /*border: 1px solid black;*/
     max-width: 250px;
   }
 
@@ -15,12 +14,6 @@
     text-align: center;
   }
 
-/*
-  #wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-*/
   #score {
     display: flex;
     flex-direction: row;
@@ -37,197 +30,11 @@
     line-height: 40px;
   }
 
-  #myUsername {
-  /*  font-family: "Lucida Console", Courier, monospace;*/
-  }
-
   textarea {
     border: 1px solid black;
     resize: none;
     width: 200px;
   }
-
-/*
-  body {
-    font-family: sans-serif;
-    font-size: 20pt;
-    background-color: white;
-  }
-
-  h1 {
-    font-family: sans-serif;
-    font-size: 25pt;
-    color: black;
-    text-align: center;
-  }
-
-  textarea{
-    width: 90%;
-  }
-
-  #wrapper {
-    margin: auto;
-    max-width: 1200px;
-    background-color: #BDF;
-    border: 1px solid black;
-  }
-
-  #container1 {
-    position: relative;
-    margin: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    border-bottom: 1px solid black;
-  }
-
-  #container2 {
-    position: relative;
-    padding: 20px;
-    margin: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    font-size: 14pt;
-    flex-wrap: wrap;
-  }
-
-  .userFixed {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 150px;
-    margin: auto;
-    font-size: 16pt;
-    text-align: center;
-  }
-
-  .userFixed #listOfUsers {
-    background-color: white;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    padding: 3px;
-    line-height: 1.5;
-    font-size: 14pt;
-    font-family: "Lucida Console", Courier, monospace;
-  }
-
-  .userFixed #numOfUsers {
-    background-color: #bfbfbf;
-    border: 1px solid black;
-    padding: 3px;
-  }
-
-  #submitButton{
-    width: 140px;
-    font-size: 16pt;
-  }
-
-  #container1 .team {
-    text-align: center;
-    flex-grow: 1;
-  }
-
-  #container1 .middle {
-    text-align: center;
-    max-width: 600px;
-    flex-grow: 1;
-  }
-
-  #container1 .score {
-    text-align: center;
-    font-size:40pt;
-  }
-
-  #container1 .currentWord {
-    color: red;
-    font-size: 30pt;
-    margin: 10px;
-    border: 1px solid black;
-    padding: 10px;
-    background-color: white;
-  }
-
-  #container1 input {
-    width: 200px;
-    font-size: 20pt;
-    padding: 2px;
-  }
-
-  .inputBox {
-    flex-grow: 1;
-    width: 400px;
-    font-size: 14pt;
-  }
-
-  .inputBox #wordList {
-    border: 1px solid black;
-    resize: none;
-  }
-
-  .gameButtonsBox {
-    flex-grow: 1;
-    width: 250px;
-    margin: auto;
-    text-align: center;
-  }
-
-  .gameButtonsArea {
-    margin: 0 auto;
-  }
-
-  .gameButtonsArea div {
-    padding: 10px 5px;
-    margin: 10px;
-  }
-
-  .gameButtonsArea .yourUsernameis {
-    border: 1px solid black;
-    background-color: #bfbfbf;
-  }
-
-  .gameButtonsArea #myUsername {
-    border: 1px solid black;
-    background-color: white;
-    font-family: "Lucida Console", Courier, monospace;
-  }
-
-  .gameButtonsArea .button {
-    display: inline-block;
-    font-size: 16pt;
-    margin: 0;
-  }
-
-  .gameButtonsArea input {
-    width: 160px;
-    font-size: 18pt;
-    padding: 3px;
-  }
-
-  .consoleFrame {
-    flex-grow: 1;
-    width: 400px;
-    font-size: 14pt;
-  }
-
-  .consoleFrame #consoleDisplay {
-    flex-grow: 1;
-    font-size: 12pt;
-    height: 250px;
-    border: 1px solid black;
-    background-color: white;
-    padding: 2px;
-    resize: none;
-    font-family: "Lucida Console", Courier, monospace;
-  }
-
-  .outputText {
-    color: #4d4d4d;
-  }
-*/
-  /* some changes made by Joon */
 
   #prompt span {
     font-size: 10pt;
@@ -253,30 +60,15 @@
 
 <!--    <h1>Fishbowl</h1>-->
 
-    <div id="score">
-
-    <div class="team">
-      <div class="team" id="team1">Team 1-</div>
-      <div class='score' id="team1Score">0</div>
-    </div>
-
-    <div class="team">
-      <div class="team" id="team2">-Team 2</div>
-      <div class='score' id="team2Score">0</div>
-    </div>
-
-
-    </div>
-
     <div class="middle">
 
 
       <br>
-      <div class='currentWord' id="currentWord">Submit Word(s) Below</div>
+      <div class='currentWord' id="currentWord">Submit Person Below</div>
       <br>
       <div class='nextWord'>
         <input type="button" id="nextWordButton" value="NEXT WORD">
-        <input type="button" id="gotItButton" value="Got It!">
+      <!--  <input type="button" id="gotItButton" value="Got It!"> -->
       </div>
     <br>
     </div>
@@ -284,16 +76,15 @@
     <div>
       <hr>
         <div class="inputBox" id="inputBox" >
-          Input your word(s) below. Press ENTER after each word (even when inputting just one word)
+          Input your Person below. No ENTER required.
             <br>
-          <textarea id="wordList" rows="10" placeholder="Input Word(s) Here..."></textarea>
+          <input type="text" placeholder="Jackie Chan" id="wordList" >
             <br>
           <input type="button" id="submitButton" value="Submit">
            <br>
         </div>
         <div class="outputText">
           <span id="gameText"></span>
-          <span id="numberCorrect"></span>
         </div>
     </div>
     <hr>
@@ -314,7 +105,7 @@
          <input type="button" id="startGame" value="Start Game">
         </div>
        <div class = button>
-         <input type="button" id="nextRound" value="Next Round">
+    <!--     <input type="button" id="nextRound" value="Next Round"> -->
        </div>
       </div>
     </div>
@@ -358,7 +149,6 @@ var userList = [];
 //WordList
 var currentWordIndex = 0;
 var remainingNumberOfWords = 0;
-var numberCorrect = 0;
 //constants
 const oSubmitButton = document.getElementById("submitButton");
 const oStartGame = document.getElementById("startGame");
@@ -368,12 +158,6 @@ const usernameInput = document.getElementById("usernameInput");
 const oCurrentWord = document.getElementById("currentWord");
 const oInputBox = document.getElementById("inputBox");
 const oGameText = document.getElementById("gameText");
-const oNumberCorrect = document.getElementById("numberCorrect");
-
-const oTeam1Score = document.getElementById("team1Score");
-const oTeam2Score = document.getElementById("team2Score");
-const oTeam1 = document.getElementById("team1");
-const oTeam2 = document.getElementById("team2");
 
 //
 
@@ -428,23 +212,10 @@ socket.on("globalUpdateWord", function (data) {
   currentWordIndex = data.currentWordIndex;
   remainingNumberOfWords = data.remainingNumberOfWords;
 
-  if ( (gameIsStarted) && (moiTurnLock) ) {
-    oNumberCorrect.innerHTML = " (" + data.numberCorrect + ")";
-  };
-
   if ( (gameIsStarted) && (moiTurnUser == userName) ) {
     oCurrentWord.innerHTML = data.currentWord;
   };
 
-});
-
-/*
-* RECEIVE globalUpdateScore------------------------------------
-*/
-
-socket.on("globalUpdateScore", function (data) {
-  oTeam1Score.innerHTML = data.team1Score;
-  oTeam2Score.innerHTML = data.team2Score;
 });
 
 /*
@@ -478,7 +249,6 @@ socket.on("globalUpdateGame", function (data) {
       oCurrentWord.style.color = "white";
       oMoiTurn.value = "My Turn";
       oGameText.innerHTML = "Turn ended";
-      oNumberCorrect.innerHTML = "";
       break;
     case "NEXTROUND":
       oCurrentWord.style.color = "white";
@@ -487,10 +257,11 @@ socket.on("globalUpdateGame", function (data) {
       break;
     case "ENDGAME":
       oCurrentWord.style.color = "red";
-      oCurrentWord.innerHTML = "Submit Word(s) Below";
+      oCurrentWord.innerHTML = "Submit Person Below";
       oInputBox.style.display = "block";
       oTextArea.value = "";
       oMoiTurn.style.background = "#e7e7e7";
+      oMoiTurn.value = "My Turn";
       oStartGame.style.background = "#e7e7e7";
       oStartGame.value = "Start Game";
       oStartGame.style.color = "black";
@@ -570,27 +341,6 @@ socket.on("clientSubmitWordsConfirmation", function (data) {
 });
 
 /*
-* SEND clientUpdateScore-------------------------------------------
-*/
-
-//Increase score of Team 1
-oTeam1Score.onclick = function() {
-  socket.emit("clientUpdateScore", "1UP" );
-};
-//Decrease score of Team 1
-oTeam1.onclick = function() {
-  socket.emit("clientUpdateScore", "1DOWN" );
-};
-//Increase score of Team 2
-oTeam2Score.onclick = function() {
-  socket.emit("clientUpdateScore", "2UP" );
-};
-//Decrease score of Team 2
-oTeam2.onclick = function() {
-  socket.emit("clientUpdateScore", "2DOWN" );
-};
-
-/*
 * SEND clientUpdateGame = STARTGAME & ENDGAME
 *  - Makes currentWord color white for all Users
 *  - Puts "Click NEXT WORD to begin" in word box.
@@ -617,26 +367,6 @@ oStartGame.onclick = function () {
 };
 
 /*
-* SEND clientUpdateGame = NEXTROUND
-*  - Makes currentWord color white for all Users
-*  - Moves usedWordList to remainingWordList (checks for null first);
-*  - Shuffles remainingWordList
-*  - Sends message to consoleDisplay about success
-*/
-
-const oNextRound = document.getElementById("nextRound");
-oNextRound.onclick = function () {
-  if ( (gameIsStarted) && (!remainingNumberOfWords) ) {
-    if(confirm ("Are you sure you want to start the next round?")) {
-      socket.emit ("clientUpdateGame", {
-        command: "NEXTROUND",
-        userName: userName
-      });
-    }
-  }
-}
-
-/*
 * SEND clientNextWord
 *  - Retreives next Word for all Users
 */
@@ -645,18 +375,6 @@ const oNextWordButton = document.getElementById("nextWordButton");
 oNextWordButton.onclick = function () {
   if( (gameIsStarted) && (moiTurnUser == userName) ) {
     socket.emit("clientNextWord", {userName: userName});
-  }
-};
-
-/*
-* SEND clientGotIt
-*  - Moves word to usedwordlist [];
-*/
-
-const oGotItButton = document.getElementById("gotItButton");
-oGotItButton.onclick = function () {
-  if( (gameIsStarted) && (moiTurnUser == userName) ) {
-    socket.emit("clientGotIt", {userName: userName});
   }
 };
 

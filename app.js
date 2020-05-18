@@ -217,7 +217,7 @@ io.on("connection", function (socket) {
   * Score is incremented and sent to All Users through globalUpdateScore
   * ---------------------------------------------------------------------
   */
-
+/*
   socket.on("clientUpdateScore", function (data) {
     switch (data) {
       case "1UP":
@@ -242,7 +242,7 @@ io.on("connection", function (socket) {
         break;
     }
   });
-
+*/
   /*
   * ---------------------------------------------------------------------
   * clientGotIt -> globalUpdateWord
@@ -361,26 +361,26 @@ io.on("connection", function (socket) {
   socket.on("clientSubmitWords", function(data) {
 
     //convert to String
-    var clientWordList = data.toString();
-    var clientWordArray = [];
-    var yesEnter = clientWordList.includes("\n");
+    //var clientWordList = data.toString();
+    //var clientWordArray = [];
+    //var yesEnter = clientWordList.includes("\n");
     var w = "";
 
     //Check for enters
-    if ( (!globalUpdateGame.gameIsStarted) && (yesEnter) ) {
+    if ( (!globalUpdateGame.gameIsStarted) ) {
       //Convert String to Array, split on \n character
-      clientWordArray = clientWordList.split("\n");
+      //clientWordArray = clientWordList.split("\n");
 
       //Remove any null entries in Array
-      clientWordArray = clientWordArray.filter(function (e) {return e});
+      //clientWordArray = clientWordArray.filter(function (e) {return e});
 
       //Concat to wordList
-      remainingWordList.push(...clientWordArray);
+      remainingWordList.push(data);
 
       //Send back confirmation
       socket.emit("clientSubmitWordsConfirmation", {
         eventSuccess: 1,
-        message: "Words Received"
+        message: "Person Received"
       });
 
       var len = remainingWordList.length;
@@ -394,6 +394,7 @@ io.on("connection", function (socket) {
       */
     }
 
+/*
     //Error message if no enters are found
     if ( (!globalUpdateGame.gameIsStarted) && (!yesEnter) ) {
       socket.emit("clientSubmitWordsConfirmation", {
@@ -401,7 +402,7 @@ io.on("connection", function (socket) {
         message: "ENTER not used, Please use ENTER between words"
       });
     }
-
+*/
     });
 
   /*
