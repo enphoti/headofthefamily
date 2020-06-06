@@ -210,39 +210,7 @@ io.on("connection", function (socket) {
     }
   });
 
-  /*
-  * ---------------------------------------------------------------------
-  * clientUpdateScore -> globalUpdateScore
-  * This Listener activates when the client clicks Team1 or Team2 Score.
-  * Score is incremented and sent to All Users through globalUpdateScore
-  * ---------------------------------------------------------------------
-  */
-/*
-  socket.on("clientUpdateScore", function (data) {
-    switch (data) {
-      case "1UP":
-        globalUpdateScore.team1Score++;
-        clientUpdate ("All Users", "globalUpdateScore", globalUpdateScore);
-        console.log ("Team 1 score is: " + globalUpdateScore.team1Score);
-        break;
-      case "1DOWN":
-        globalUpdateScore.team1Score--;
-        clientUpdate ("All Users", "globalUpdateScore", globalUpdateScore);
-        console.log ("Team 1 score is: " + globalUpdateScore.team1Score);
-        break;
-      case "2UP":
-        globalUpdateScore.team2Score++;
-        clientUpdate ("All Users", "globalUpdateScore", globalUpdateScore);
-        console.log ("Team 2 score is: " + globalUpdateScore.team2Score);
-        break;
-      case "2DOWN":
-        globalUpdateScore.team2Score--;
-        clientUpdate ("All Users", "globalUpdateScore", globalUpdateScore);
-        console.log ("Team 2 score is: " + globalUpdateScore.team2Score);
-        break;
-    }
-  });
-*/
+
   /*
   * ---------------------------------------------------------------------
   * clientGotIt -> globalUpdateWord
@@ -269,15 +237,6 @@ io.on("connection", function (socket) {
       globalUpdateWord.numberCorrect++;
       clientUpdate ("All Users", "globalUpdateWord", globalUpdateWord);
 
-      /*
-      w = "";
-      for ( k = 0; k < usedWordList.length ; k++ ) {
-        w += usedWordList[k] + "| ";
-      }
-      w += "= " + usedWordList.length;
-      console.log (w);
-      */
-
       console.log (data.userName + " clicked Got It!");
     }
 
@@ -290,15 +249,6 @@ io.on("connection", function (socket) {
       globalUpdateWord.remainingNumberOfWords = remainingWordList.length;
       globalUpdateWord.numberCorrect++;
       clientUpdate ("All Users", "globalUpdateWord", globalUpdateWord);
-
-      /*
-      w = "";
-      for ( k = 0; k < usedWordList.length ; k++ ) {
-        w += usedWordList[k] + "| ";
-      }
-      w += "= " + usedWordList.length;
-      console.log (w);
-      */
 
       console.log (data.userName + " clicked Got It!");
     }
@@ -318,14 +268,6 @@ io.on("connection", function (socket) {
     var w = ""; //Temp current word
     var len = remainingWordList.length; //Remaining Word List length;
     var i = globalUpdateWord.currentWordIndex;
-
-    /*
-    for ( k = 0; k < len ; k++ ) {
-      w += remainingWordList[k] + ", ";
-    }
-    w += "= " + remainingWordList.length;
-    console.log (w);
-    */
 
     //Receives i from -1 to second from last word i + 1 for next word
 
@@ -384,25 +326,8 @@ io.on("connection", function (socket) {
       });
 
       var len = remainingWordList.length;
-
-      /*
-      for ( k = 0; k < len ; k++ ) {
-        w += remainingWordList[k] + ", ";
-      }
-      w += "= " + len;
-      console.log (w);
-      */
     }
 
-/*
-    //Error message if no enters are found
-    if ( (!globalUpdateGame.gameIsStarted) && (!yesEnter) ) {
-      socket.emit("clientSubmitWordsConfirmation", {
-        eventSucess: 0,
-        message: "ENTER not used, Please use ENTER between words"
-      });
-    }
-*/
     });
 
   /*
